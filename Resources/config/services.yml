@@ -1,14 +1,15 @@
 services:
    jprud67_upload.annotation_reader:
-       class: Jprud67\UploadBundle\Annotation\UploadAnnotationReader
-       arguments: ["@annotations.reader",'@service_container']
+        class: Jprud67\UploadBundle\Annotation\UploadAnnotationReader
+        arguments: ["@annotations.reader",'@service_container']
    jprud67_upload.utility:
-       class: Jprud67\UploadBundle\Utils\Utility
-       arguments: ['@doctrine.orm.entity_manager','@service_container']
+        class: Jprud67\UploadBundle\Utils\Utility
+        arguments: ['@doctrine.orm.entity_manager','@service_container']
    jprud67_upload.handler:
-       class: Jprud67\UploadBundle\Handler\UploadHandler
+        class: Jprud67\UploadBundle\Handler\UploadHandler
    jprud67_upload.subscriber:
-       class: Jprud67\UploadBundle\Listener\UploadSubscriber
-       arguments: ['@jprud67_upload.annotation_reader','@jprud67_upload.handler' ]
-       tags:
+        class: Jprud67\UploadBundle\Listener\UploadSubscriber
+        arguments: ['@jprud67_upload.annotation_reader','@jprud67_upload.handler' ]
+        tags:
           - { name: doctrine.event_subscriber, connection: default}
+        public: false
