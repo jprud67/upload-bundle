@@ -1,0 +1,21 @@
+{
+    "name": "jprud67/upload-bundle",
+    "type": "symfony-bundle",
+    "description": "Simple upload with symfony framework",
+    "license": "MIT",
+    "authors":      [
+        {
+            "name":     "Prudence Dieudonné ASSOGBA",
+            "email": "jprud67@gmail.com"
+        }
+    ],
+     "require": {
+            "php": ">=5.5.9",
+            "symfony/framework-bundle": ">= 3.4",
+            "doctrine/doctrine-bundle": "*"
+       } ,
+     "autoload":     {
+        "psr-4": { "Jprud67\\UploadBundle\\": "" }
+     },
+      "minimum-stability": "dev"
+}
